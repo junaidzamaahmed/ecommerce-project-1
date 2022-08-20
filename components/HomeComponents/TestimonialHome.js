@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import testimonial1 from "../public/images/testimonial-1.jpg";
-import quotes from "../public/images/icons/quotes.svg";
-import cta from "../public/images/cta-banner.jpg";
+import testimonial1 from "../../public/images/testimonial-1.jpg";
+import quotes from "../../public/images/icons/quotes.svg";
+import cta from "../../public/images/cta-banner.jpg";
 
 export const TestimonialHome = () => {
   return (

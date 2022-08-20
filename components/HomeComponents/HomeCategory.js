@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import dress from "../public/images/icons/dress.svg";
-import winterWear from "../public/images/icons/coat.svg";
-import glasses from "../public/images/icons/glasses.svg";
-import shorts from "../public/images/icons/shorts.svg";
-import tshirts from "../public/images/icons/tee.svg";
-import jackets from "../public/images/icons/jacket.svg";
-import watch from "../public/images/icons/watch.svg";
-import hat from "../public/images/icons/hat.svg";
+import dress from "../../public/images/icons/dress.svg";
+import winterWear from "../../public/images/icons/coat.svg";
+import glasses from "../../public/images/icons/glasses.svg";
+import shorts from "../../public/images/icons/shorts.svg";
+import tshirts from "../../public/images/icons/tee.svg";
+import jackets from "../../public/images/icons/jacket.svg";
+import watch from "../../public/images/icons/watch.svg";
+import hat from "../../public/images/icons/hat.svg";
 
 export const HomeCategory = () => {
   return (

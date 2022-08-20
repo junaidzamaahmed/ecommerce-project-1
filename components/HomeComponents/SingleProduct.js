@@ -1,11 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
+import { ImageContainer } from "./ProductContainer";
 
 export const SingleProduct = ({ product }) => {
-  const ImageContainer = styled.div`
-    position: absolute;
-  `;
   const full = Math.round(product.rating);
   const rating = [];
   for (let i = 1; i <= 5; i++) {
@@ -68,9 +67,9 @@ export const SingleProduct = ({ product }) => {
           {product.category}
         </a>
 
-        <a href="#">
-          <h3 className="showcase-title">{product.title}</h3>
-        </a>
+        <h3 className="showcase-title">
+          <Link href={"/products/" + product.key}>{product.title}</Link>
+        </h3>
 
         <div className="showcase-rating">{rating.map((rate) => rate)}</div>
 

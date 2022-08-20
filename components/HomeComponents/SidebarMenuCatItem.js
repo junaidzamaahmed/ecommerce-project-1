@@ -1,12 +1,15 @@
 import Image from "next/image";
 import React from "react";
 import { useState } from "react";
-import bs1 from "../public/images/products/1.jpg";
+import bs1 from "../../public/images/products/1.jpg";
 
 export const SidebarMenuCatItem = ({ catagData }) => {
   const [sideMenuCarousel, setSideMenuCarousel] = useState(false);
   return (
-    <li className="sidebar-menu-category">
+    <li
+      className="sidebar-menu-category"
+      onClick={() => setSideMenuCarousel(!sideMenuCarousel)}
+    >
       <button className="sidebar-accordion-menu" data-accordion-btn>
         <div className="menu-title-flex">
           <Image
@@ -22,17 +25,9 @@ export const SidebarMenuCatItem = ({ catagData }) => {
 
         <div>
           {!sideMenuCarousel ? (
-            <ion-icon
-              onClick={() => setSideMenuCarousel(true)}
-              name="add-outline"
-              className="add-icon"
-            ></ion-icon>
+            <ion-icon name="add-outline" className="add-icon"></ion-icon>
           ) : (
-            <ion-icon
-              onClick={() => setSideMenuCarousel(false)}
-              name="remove-outline"
-              className="remove-icon"
-            ></ion-icon>
+            <ion-icon name="remove-outline" className="remove-icon"></ion-icon>
           )}
         </div>
       </button>

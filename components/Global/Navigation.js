@@ -1,15 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import { useState } from "react";
-import logo from "../public/images/logo/logo.svg";
+import logo from "../../public/images/logo/logo.svg";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  toggleMobileCatag,
+  toggleMobileMenu,
+} from "../../slices/mobilemenuSlice";
 
-export const Navigation = ({
-  mobileMenu,
-  mobileMenuCloseFunc,
-  setMobileMenu,
-  mobileCatagMenu,
-  setMobileCatagMenu,
-}) => {
+export const Navigation = () => {
+  const mobileMenu = useSelector((state) => state.mobilemenu.mobileMenuValue);
+  const mobileCatag = useSelector((state) => state.mobilemenu.mobileCatagValue);
+  const dispatch = useDispatch();
   return (
     <nav className="navbar container">
       <div>
@@ -357,9 +358,7 @@ export const Navigation = ({
       </nav>
       <div className="mobile-bottom-navigation">
         <button
-          onClick={() => {
-            setMobileMenu(true);
-          }}
+          onClick={() => dispatch(toggleMobileMenu())}
           className={mobileMenu ? "action-btn active" : "action-btn"}
           data-mobile-menu-open-btn
         >
@@ -384,9 +383,9 @@ export const Navigation = ({
 
         <button
           onClick={() => {
-            setMobileCatagMenu(true);
+            dispatch(toggleMobileCatag());
           }}
-          className={mobileCatagMenu ? "action-btn active" : "action-btn"}
+          className={mobileCatag ? "action-btn active" : "action-btn"}
           data-mobile-menu-open-btn
         >
           <ion-icon name="grid-outline"></ion-icon>
@@ -404,7 +403,7 @@ export const Navigation = ({
           <h2 className="menu-title">Menu</h2>
 
           <button
-            onClick={mobileMenuCloseFunc}
+            onClick={() => dispatch(toggleMobileMenu())}
             className="menu-close-btn"
             data-mobile-menu-close-btn
           >

@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import banner1 from "../public/images/banner-1.jpg";
-import banner2 from "../public/images/banner-2.jpg";
-import banner3 from "../public/images/banner-3.jpg";
+import banner1 from "../../public/images/banner-1.jpg";
+import banner2 from "../../public/images/banner-2.jpg";
+import banner3 from "../../public/images/banner-3.jpg";
 
 export const HomeBanner = () => {
   return (

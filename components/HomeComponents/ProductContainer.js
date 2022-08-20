@@ -1,60 +1,61 @@
 import React from "react";
 import Image from "next/image";
-import bs1 from "../public/images/products/1.jpg";
-import bs2 from "../public/images/products/2.jpg";
-import bs3 from "../public/images/products/3.jpg";
-import bs4 from "../public/images/products/4.jpg";
-import belt from "../public/images/products/belt.jpg";
-import clothes1 from "../public/images/products/clothes-1.jpg";
-import clothes2 from "../public/images/products/clothes-2.jpg";
-import clothes3 from "../public/images/products/clothes-3.jpg";
-import clothes4 from "../public/images/products/clothes-4.jpg";
-import jacket1 from "../public/images/products/jacket-1.jpg";
-import jacket2 from "../public/images/products/jacket-2.jpg";
-import jacket3 from "../public/images/products/jacket-3.jpg";
-import jacket4 from "../public/images/products/jacket-4.jpg";
-import jacket5 from "../public/images/products/jacket-5.jpg";
-import jacket6 from "../public/images/products/jacket-6.jpg";
-import jewellery1 from "../public/images/products/jewellery-1.jpg";
-import jewellery2 from "../public/images/products/jewellery-2.jpg";
-import jewellery3 from "../public/images/products/jewellery-3.jpg";
-import partywear1 from "../public/images/products/party-wear-1.jpg";
-import partywear2 from "../public/images/products/party-wear-2.jpg";
-import perfume from "../public/images/products/perfume.jpg";
-import shampoo from "../public/images/products/shampoo.jpg";
-import shirt1 from "../public/images/products/shirt-1.jpg";
-import shirt2 from "../public/images/products/shirt-2.jpg";
-import shoe1 from "../public/images/products/shoe-1.jpg";
-import shoe11 from "../public/images/products/shoe-1_1.jpg";
-import shoe2 from "../public/images/products/shoe-2.jpg";
-import shoe21 from "../public/images/products/shoe-2_1.jpg";
-import shoe3 from "../public/images/products/shoe-3.jpg";
-import shoe4 from "../public/images/products/shoe-4.jpg";
-import shoe5 from "../public/images/products/shoe-5.jpg";
-import shorts1 from "../public/images/products/shorts-1.jpg";
-import shorts2 from "../public/images/products/shorts-2.jpg";
-import sports1 from "../public/images/products/sports-1.jpg";
-import sports2 from "../public/images/products/sports-2.jpg";
-import sports3 from "../public/images/products/sports-3.jpg";
-import sports4 from "../public/images/products/sports-4.jpg";
-import sports5 from "../public/images/products/sports-5.jpg";
-import sports6 from "../public/images/products/sports-6.jpg";
-import watch1 from "../public/images/products/watch-1.jpg";
-import watch2 from "../public/images/products/watch-2.jpg";
-import watch3 from "../public/images/products/watch-3.jpg";
-import watch4 from "../public/images/products/watch-4.jpg";
+import bs1 from "../../public/images/products/1.jpg";
+import bs2 from "../../public/images/products/2.jpg";
+import bs3 from "../../public/images/products/3.jpg";
+import bs4 from "../../public/images/products/4.jpg";
+import belt from "../../public/images/products/belt.jpg";
+import clothes1 from "../../public/images/products/clothes-1.jpg";
+import clothes2 from "../../public/images/products/clothes-2.jpg";
+import clothes3 from "../../public/images/products/clothes-3.jpg";
+import clothes4 from "../../public/images/products/clothes-4.jpg";
+import jacket1 from "../../public/images/products/jacket-1.jpg";
+import jacket2 from "../../public/images/products/jacket-2.jpg";
+import jacket3 from "../../public/images/products/jacket-3.jpg";
+import jacket4 from "../../public/images/products/jacket-4.jpg";
+import jacket5 from "../../public/images/products/jacket-5.jpg";
+import jacket6 from "../../public/images/products/jacket-6.jpg";
+import jewellery1 from "../../public/images/products/jewellery-1.jpg";
+import jewellery2 from "../../public/images/products/jewellery-2.jpg";
+import jewellery3 from "../../public/images/products/jewellery-3.jpg";
+import partywear1 from "../../public/images/products/party-wear-1.jpg";
+import partywear2 from "../../public/images/products/party-wear-2.jpg";
+import perfume from "../../public/images/products/perfume.jpg";
+import shampoo from "../../public/images/products/shampoo.jpg";
+import shirt1 from "../../public/images/products/shirt-1.jpg";
+import shirt2 from "../../public/images/products/shirt-2.jpg";
+import shoe1 from "../../public/images/products/shoe-1.jpg";
+import shoe11 from "../../public/images/products/shoe-1_1.jpg";
+import shoe2 from "../../public/images/products/shoe-2.jpg";
+import shoe21 from "../../public/images/products/shoe-2_1.jpg";
+import shoe3 from "../../public/images/products/shoe-3.jpg";
+import shoe4 from "../../public/images/products/shoe-4.jpg";
+import shoe5 from "../../public/images/products/shoe-5.jpg";
+import shorts1 from "../../public/images/products/shorts-1.jpg";
+import shorts2 from "../../public/images/products/shorts-2.jpg";
+import sports1 from "../../public/images/products/sports-1.jpg";
+import sports2 from "../../public/images/products/sports-2.jpg";
+import sports3 from "../../public/images/products/sports-3.jpg";
+import sports4 from "../../public/images/products/sports-4.jpg";
+import sports5 from "../../public/images/products/sports-5.jpg";
+import sports6 from "../../public/images/products/sports-6.jpg";
+import watch1 from "../../public/images/products/watch-1.jpg";
+import watch2 from "../../public/images/products/watch-2.jpg";
+import watch3 from "../../public/images/products/watch-3.jpg";
+import watch4 from "../../public/images/products/watch-4.jpg";
 import styled from "styled-components";
 import { SidebarMenuCatItem } from "./SidebarMenuCatItem";
 import { DealOfTheDay } from "./DealOfTheDay";
 import { SingleProduct } from "./SingleProduct";
+import { toggleMobileCatag } from "../../slices/mobilemenuSlice";
+import { useSelector, useDispatch } from "react-redux";
 
-export const ProductContainer = ({
-  mobileCatagMenu,
-  mobileCatagMenuCloseFunc,
-}) => {
-  const ImageContainer = styled.div`
-    position: absolute;
-  `;
+export const ImageContainer = styled.div`
+  position: absolute;
+`;
+export const ProductContainer = ({}) => {
+  const mobileCatag = useSelector((state) => state.mobilemenu.mobileCatagValue);
+  const dispatch = useDispatch();
 
   const catagMenuData = [
     {
@@ -301,7 +302,7 @@ export const ProductContainer = ({
 
         <div
           className={
-            mobileCatagMenu
+            mobileCatag
               ? "sidebar has-scrollbar active"
               : "sidebar has-scrollbar"
           }
@@ -312,7 +313,7 @@ export const ProductContainer = ({
               <h2 className="sidebar-title">Category</h2>
 
               <button
-                onClick={mobileCatagMenuCloseFunc}
+                onClick={() => dispatch(toggleMobileCatag())}
                 className="sidebar-close-btn"
                 data-mobile-menu-close-btn
               >
