@@ -17,7 +17,10 @@ export const SingleProduct = ({ product }) => {
   }
   return (
     <div className="showcase">
-      <div className="showcase-banner">
+      <div
+        style={{ display: "flex", justifyContent: "center" }}
+        className="showcase-banner"
+      >
         <ImageContainer>
           <Image
             height="300"
