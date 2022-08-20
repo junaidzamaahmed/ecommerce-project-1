@@ -6,6 +6,7 @@ import {
   toggleMobileCatag,
   toggleMobileMenu,
 } from "../../slices/mobilemenuSlice";
+import { BagHandleOutline } from "react-ionicons";
 
 export const Navigation = () => {
   const mobileMenu = useSelector((state) => state.mobilemenu.mobileMenuValue);
@@ -94,7 +95,7 @@ export const Navigation = () => {
             </button>
 
             <button className="action-btn">
-              <ion-icon name="bag-handle-outline"></ion-icon>
+              <BagHandleOutline color={"#00000"} height="35px" width="35px" />
               <span className="count">0</span>
             </button>
           </div>
@@ -366,9 +367,16 @@ export const Navigation = () => {
         </button>
 
         <button className="action-btn">
-          <ion-icon name="bag-handle-outline"></ion-icon>
+          <BagHandleOutline
+            style={{ marginTop: "5px" }}
+            color={"#00000"}
+            height="30px"
+            width="30px"
+          />
 
-          <span className="count">0</span>
+          <span style={{ marginTop: "10px" }} className="count">
+            0
+          </span>
         </button>
 
         <button className="action-btn">

@@ -3,6 +3,7 @@ import React from "react";
 import testimonial1 from "../../public/images/testimonial-1.jpg";
 import quotes from "../../public/images/icons/quotes.svg";
 import cta from "../../public/images/cta-banner.jpg";
+import { TicketOutline } from "react-ionicons";
 
 export const TestimonialHome = () => {
   return (
@@ -115,7 +116,7 @@ export const TestimonialHome = () => {
 
               <a href="#" className="service-item">
                 <div className="service-icon">
-                  <ion-icon name="ticket-outline"></ion-icon>
+                  <TicketOutline color={"#00000"} height="35px" width="35px" />
                 </div>
 
                 <div className="service-content">

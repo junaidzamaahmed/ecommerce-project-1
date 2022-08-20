@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { ImageContainer } from "./ProductContainer";
+import { BagAddOutline } from "react-ionicons";
 
 export const SingleProduct = ({ product }) => {
   const full = Math.round(product.rating);
@@ -57,7 +58,7 @@ export const SingleProduct = ({ product }) => {
           </button>
 
           <button className="btn-action">
-            <ion-icon name="bag-add-outline"></ion-icon>
+            <BagAddOutline color={"#00000"} />
           </button>
         </div>
       </div>

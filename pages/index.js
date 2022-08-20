@@ -22,17 +22,11 @@ export default function Home({ products }) {
   // notification toast
   const [notiView, setNotiView] = useState(true);
 
-  // Mobile Nav Menu
+  // Mobile Menus
   const mobileMenu = useSelector((state) => state.mobilemenu.mobileMenuValue);
   const mobileCatag = useSelector((state) => state.mobilemenu.mobileCatagValue);
   const dispatch = useDispatch();
 
-  // Mobile Category Menu
-  // const [mobileCatagMenu, setMobileCatagMenu] = useState(false);
-
-  // const mobileCatagMenuCloseFunc = () => {
-  //   setMobileCatagMenu(false);
-  // };
   return (
     <div>
       <Head>
